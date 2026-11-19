@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: #7c3aed;
+    --color-primary-light: #ede9fe;
+    --color-secondary: #0284c7;
+    --color-accent: #f59e0b;
+    --color-mint: #10b981;
+    --color-pink: #ec4899;
+  }
+
+  body {
+    @apply bg-[#FBFBFE] text-slate-800 font-sans selection:bg-purple-200 selection:text-purple-900;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Accessible focus indicators for special education keyboard/switch navigation */
+  *:focus-visible {
+    @apply outline-none ring-4 ring-purple-400 ring-offset-2 ring-offset-white rounded-xl;
+  }
+}
+
+/* Reduced motion preference support for sensory-sensitive ADHD learners */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.reduced-motion *, 
+.reduced-motion *::before, 
+.reduced-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}
+
+/* High contrast mode for visual clarity */
+.high-contrast {
+  filter: contrast(125%);
+}
+
+.high-contrast body {
+  background-color: #FFFFFF !important;
+}
+
+/* Gentle bouncing for mascot & playful touch items */
+@keyframes gentle-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes gentle-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.92;
+  }
+}
+
+@keyframes float-clouds {
+  0% { transform: translateX(0px); }
+  50% { transform: translateX(15px); }
+  100% { transform: translateX(0px); }
+}
+
+.animate-gentle-bounce {
+  animation: gentle-bounce 3s ease-in-out infinite;
+}
+
+.animate-gentle-pulse {
+  animation: gentle-pulse 2.5s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float-clouds 6s ease-in-out infinite;
+}
+
+/* Custom child-friendly scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f9;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c4b5fd;
+  border-radius: 9999px;
+  border: 2px solid #f1f1f9;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a78bfa;
+}
+
+/* Classroom TV large projection styling */
+.classroom-tv-mode {
+  font-size: 1.25rem;
+}
+
+.classroom-tv-mode h1 {
+  font-size: 3.5rem;
+}
+
+.classroom-tv-mode h2 {
+  font-size: 2.75rem;
+}
+
+.classroom-tv-mode button {
+  padding: 1.25rem 2rem;
+  font-size: 1.5rem;
+}
+
